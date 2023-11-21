@@ -178,6 +178,10 @@ void output_ident(FILE *outputf, bool only_ident, struct keyval *parseid, struct
 		fprintf(outputf,
 			"\t\t\terror = css_stylesheet_style_inherit(result, %s);\n",
 			parseid->val);
+		} else if (strcmp(ckv->key,"REVERT") == 0) {
+		fprintf(outputf,
+			"\t\t\terror = css_stylesheet_style_revert(result, %s);\n",
+			parseid->val);
 		} else {
 		fprintf(outputf,
 			"\t\t\terror = css__stylesheet_style_appendOPV(result, %s, %s);\n",
